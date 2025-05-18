@@ -10,8 +10,12 @@ app = Flask(__name__)
 CORS(app)
 
 # ----------- 1. Charger les données et prétraitement -----------
+data = []
 with open("data/parsed.jl", "r", encoding="utf-8") as f:
-    data = [json.loads(line) for line in f]
+    for i, line in enumerate(f):
+        if i >= 1000:
+            break
+        data.append(json.loads(line))
 
 texts = [d["content"] for d in data]
 addresses = [d["address"] for d in data]
