@@ -45,7 +45,14 @@ infos = ["Je suis un assistant qui recommande des hôtels selon votre message �
 # ----------- 6. Endpoint Flask pour recommandation -----------
 @app.route("/recommend", methods=["POST"])
 def recommend_hotels():
-    user_input = request.json.get("message", "").strip().lower()
+    data = request.get_json()
+
+    # Vérification de la présence et du type du champ "message"
+    message = data.get("message") if data else ""
+    if not isinstance(message, str):
+        return jsonify({"message": "❗Le champ 'message' doit être une chaîne de caractères."}), 400
+
+    user_input = message.strip().lower()
 
     if not user_input:
         return jsonify({"message": "❗Veuillez fournir un message pour obtenir des recommandations."}), 400
@@ -103,7 +110,6 @@ def recommend_hotels():
             "message": "❌ Désolé, je n’ai trouvé aucun hôtel correspondant à votre recherche."
         })
 
-# ----------- 7. Lancer le serveur Flask -----------
+# ----------- Lancer le serveur Flask -----------
 if __name__ == "__main__":
     app.run(port=3300, debug=True)
-
