@@ -10,6 +10,7 @@ __pycache__/
 *.tmp
 *.swp
 
+
 # Environnements virtuels
 venv/
 env/
@@ -18,7 +19,6 @@ env/
 .vscode/
 .idea/
 
-# Données ou fichiers générés
 parsed.jl
 
 # Fichiers de configuration secrets
