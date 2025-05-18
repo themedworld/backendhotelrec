@@ -7,4 +7,4 @@ if [ ! -f parsed.jl ]; then
 fi
 
 # Lance le serveur Flask
-exec gunicorn app:app --bind 0.0.0.0:$PORT
+exec gunicorn app:rec --bind 0.0.0.0:$PORT
