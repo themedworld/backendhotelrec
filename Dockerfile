@@ -2,10 +2,10 @@
 FROM python:3.10
 
 # Définir le répertoire de travail
-WORKDIR /app
+WORKDIR /rec
 
 # Copier les fichiers nécessaires
-COPY . /app
+COPY . /rec
 
 # Installer les dépendances
 RUN pip install --no-cache-dir -r requirements.txt
@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8080
 
 # Lancer l'application
-CMD ["python", "app.py"]
+CMD ["python", "rec.py"]
