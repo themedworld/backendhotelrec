@@ -3,5 +3,5 @@ services:
     name: backendhotelrec
     env: python
     buildCommand: ""
-    startCommand: gunicorn app:rec
+    startCommand: gunicorn rec:app
     plan: free
