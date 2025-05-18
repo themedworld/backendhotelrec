@@ -1,5 +1,9 @@
 #!/bin/bash
-echo "Extracting parsed.jl.zip..."
-unzip -o parsed.jl.zip
-echo "Starting the app..."
-python rec.py 
+echo "Creating data directory..."
+mkdir -p data
+
+echo "Extracting parsed.jl.zip to data/..."
+unzip -o parsed.jl.zip -d data
+
+echo "Starting the backend..."
+python rec.py
