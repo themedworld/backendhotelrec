@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 Flask
 flask-cors
 scikit-learn
 gdown
+=======
+Flask
+flask-cors
+scikit-learn
+gdown
+>>>>>>> 14f6219 (Ajout du fichier parsed.jl.zip)
 gunicorn
